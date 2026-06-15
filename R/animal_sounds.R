@@ -2,7 +2,6 @@
 #' 
 #' This is a package that print **animals** and **sounds**
 #' It is a wrapper to [paste0()].
-#' Here's some maths: $x_n$.
 #' 
 #' 
 #' @param animal a string
@@ -14,9 +13,26 @@
 #' @examples
 #' animal_sounds("dog","woof")
 animal_sounds <- function(animal, sound) {
-  stopifnot(is.character(animal) & length(animal) == 1)
-  stopifnot(is.character(sound) & length(sound) == 1)
+  if(!rlang::is_character(animal, n = 1)){
+    cli::cli_abort(
+      c("{.var animal} must be a single string",
+    "i" = "It was {.type{animal}} of lenght {lenght(animal)} instead")
+    )
+
+  }
+    if(!rlang::is_character(sound, n = 1)){
+    cli::cli_abort("`sound`must be a single string")
+  }
   paste0("The ", animal, " goes " ,sound, "!")
+}
+
+check_arg<-function(arg, n = 1){
+  if(!rlang::is_character(arg, n = 1)){
+    cli::cli_abort(
+      c("{.var {rlang::caller_arg(arg)}} must be a character vector of lenght {n}",
+      "i" = "It was {.type {arg}} of lenght {lenght(arg)}} instead.")
+    )
+  }
 }
 
 
