@@ -17,7 +17,6 @@ a string with the animal and sound
 \description{
 This is a package that print \strong{animals} and \strong{sounds}
 It is a wrapper to \code{\link[=paste0]{paste0()}}.
-Here's some maths: $x_n$.
 }
 \examples{
 animal_sounds("dog","woof")

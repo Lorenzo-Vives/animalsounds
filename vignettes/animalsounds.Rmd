@@ -1,0 +1,26 @@
+---
+title: "How to get started with animalsounds"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to get started with animalsounds}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(animalsounds)
+```
+
+The `animalsounds` package includes a simple function for combining an animal
+name with the sound it makes.
+
+```{r}
+animal_sounds("cat", "miau")
+```
